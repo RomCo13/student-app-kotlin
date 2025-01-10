@@ -16,35 +16,33 @@ class AddStudentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_add_student)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { view, windowInsets ->
+            val systemBarInsets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.setPadding(systemBarInsets.left, systemBarInsets.top, systemBarInsets.right, systemBarInsets.bottom)
+            windowInsets
         }
 
-        // Initialize views
-        val checkedButton: CheckBox = findViewById(R.id.add_student_activity_checked_button)
-        val saveButton: Button = findViewById(R.id.add_student_activity_save_button)
-        val cancelButton: Button = findViewById(R.id.add_student_activity_cancel_button)
-        val nameEditText: EditText = findViewById(R.id.add_student_activity_name_edit_text)
-        val idEditText: EditText = findViewById(R.id.add_student_activity_id_edit_text)
-        val phoneEditText: EditText = findViewById(R.id.add_student_activity_phone_edit_text)
-        val addressEditText: EditText = findViewById(R.id.add_student_activity_address_edit_text)
-        val saveMessageTextView: TextView = findViewById(R.id.add_student_activity_save_message_text_view)
+        val consentCheckBox: CheckBox = findViewById(R.id.add_student_activity_checked_button)
+        val confirmButton: Button = findViewById(R.id.add_student_activity_save_button)
+        val backButton: Button = findViewById(R.id.add_student_activity_cancel_button)
+        val studentNameEditText: EditText = findViewById(R.id.add_student_activity_name_edit_text)
+        val studentIdEditText: EditText = findViewById(R.id.add_student_activity_id_edit_text)
+        val studentPhoneEditText: EditText = findViewById(R.id.add_student_activity_phone_edit_text)
+        val studentAddressEditText: EditText = findViewById(R.id.add_student_activity_address_edit_text)
+        val statusTextView: TextView = findViewById(R.id.add_student_activity_save_message_text_view)
 
-
-        cancelButton.setOnClickListener{
+        backButton.setOnClickListener{
             finish()
         }
 
-        saveButton.setOnClickListener {
-            val name = nameEditText.text.toString()
-            val id = idEditText.text.toString()
-            val phone = phoneEditText.text.toString()
-            val address = addressEditText.text.toString()
-            val isChecked = if (checkedButton.isChecked) "Checked" else "Unchecked"
+        confirmButton.setOnClickListener {
+            val studentName = studentNameEditText.text.toString()
+            val studentId = studentIdEditText.text.toString()
+            val studentPhone = studentPhoneEditText.text.toString()
+            val studentAddress = studentAddressEditText.text.toString()
+            val consentStatus = if (consentCheckBox.isChecked) "Checked" else "Unchecked"
 
-            saveMessageTextView.text = "Name: $name, ID: $id, Phone: $phone, Address: $address, Status: $isChecked saved!"
+            statusTextView.text = "Name: $studentName, ID: $studentId, Phone: $studentPhone, Address: $studentAddress, Status: $consentStatus saved!"
         }
     }
 }
