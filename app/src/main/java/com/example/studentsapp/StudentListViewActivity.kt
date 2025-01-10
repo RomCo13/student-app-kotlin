@@ -61,21 +61,6 @@ class StudentListViewActivity : AppCompatActivity() {
                 }
             }
 
-//            var view = convertView
-//            if (view == null){
-//                view = inflation.inflate(R.layout.student_list_row, parent, false)
-//                Log.d("TAG", "Inflating position $position")
-//                val checkBox: CheckBox? = view?.findViewById(R.id.student_row_check_box)
-//
-//                checkBox?.apply {
-//                    setOnClickListener { view ->
-//                        (tag as? Int)?.let { tag ->
-//                            val student = students?.get(tag)
-//                            student?.isChecked = (view as? CheckBox)?.isChecked ?: false
-//                        }
-//                    }
-//                }
-//            }
 
             val student = students?.get(position)
             val nameTextView: TextView? = view?.findViewById(R.id.student_row_name_text_view)
