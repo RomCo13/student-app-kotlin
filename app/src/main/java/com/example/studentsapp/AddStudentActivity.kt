@@ -44,7 +44,7 @@ class AddStudentActivity : AppCompatActivity() {
             val address = addressEditText.text.toString()
             val isChecked = if (checkedButton.isChecked) "Checked" else "Unchecked"
 
-            saveMessageTextView.text = "Name: $name, ID: $id, Phone: $phone, Address: $address, Status: $isChecked saved!"
+            saveMessageTextView.text = "Changes saved successfully"
         }
     }
 }
