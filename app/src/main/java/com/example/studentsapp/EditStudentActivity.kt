@@ -59,7 +59,13 @@ class EditStudentActivity : AppCompatActivity() {
         }
 
         buttonDelete.setOnClickListener {
-            textViewSaveMessage.text = ""
+            val name = null
+            val id = null
+            val phone = null
+            val address = null
+            val status = "Unchecked"
+
+            textViewSaveMessage.text = "Deleted succesfully"
         }
     }
 }
