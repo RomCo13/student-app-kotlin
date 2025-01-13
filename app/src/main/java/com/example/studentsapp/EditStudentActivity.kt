@@ -55,7 +55,7 @@ class EditStudentActivity : AppCompatActivity() {
             val address = editTextAddress.text.toString()
             val status = if (checkboxStatus.isChecked) "Checked" else "Unchecked"
 
-            textViewSaveMessage.text = "Name: $name, ID: $id, Phone: $phone, Address: $address, Status: $status saved!"
+            textViewSaveMessage.text = "Changes saved succesfully"
         }
 
         buttonDelete.setOnClickListener {
